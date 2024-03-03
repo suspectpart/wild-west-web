@@ -1,0 +1,30 @@
+{
+  "name": "wildwest",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.0.8",
+    "astro": "^4.4.9",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "eslint-plugin-vue": "^9.22.0",
+    "prettier-plugin-astro": "^0.13.0",
+    "vue-eslint-parser": "^9.4.2"
+  }
+}
