@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply text-[#1F1717];
+    }
+}
+
+@font-face {
+    font-family: "Rye";
+    src: url("/fonts/Rye-Regular.ttf");
+  }

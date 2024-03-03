@@ -2,15 +2,16 @@
 import { ref, type Ref } from 'vue';
 
 const count: Ref<number> = ref(0);
-const animation: Ref<string> = ref('');
+const animation: Ref<boolean> = ref(false);
 
 function clickHandler() {
   count.value += 1;
-  animation.value = '';
+  animation.value = false;
   setTimeout(() => {
-    animation.value = 'animate-pop';
+    animation.value = true;
   }, 10);
 }
+
 </script>
 
 <template>
@@ -24,9 +25,7 @@ function clickHandler() {
     <div
       class="bg-red-300 text-2xl p-4 min-w-24 flex justify-center font-black"
     >
-      <div :class="animation">
-        {{ count }}
-      </div>
+      <div :class="{ 'animate-pop': animation }">{{ count }}</div>
     </div>
   </div>
 </template>

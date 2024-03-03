@@ -12,6 +12,9 @@ export default {
       animation: {
         pop: 'pop 0.5s ease-in',
       },
+      fontFamily: {
+        'west': ['"Rye"', 'serif']
+      }
     },
   },
   plugins: [],
