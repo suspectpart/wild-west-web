@@ -11,19 +11,18 @@ function clickHandler() {
     animation.value = true;
   }, 10);
 }
-
 </script>
 
 <template>
-  <div class="flex gap-12">
+  <div class="flex items-center gap-12 bg-[#1F1717] p-4">
     <button
-      class="px-4 py-2 border-red-500 border-4 bg-red-800 hover:bg-red-900 rounded-xl"
+      class="px-4 py-2 text-black border-[#CE5A67] border-4 bg-[#F4BF96] hover:bg-[#F4BF96]/90 rounded-xl"
       @click="clickHandler"
     >
-      Please dont't click
+      Obligatory click counter
     </button>
     <div
-      class="bg-red-300 text-2xl p-4 min-w-24 flex justify-center font-black"
+      class="bg-[#FCF5ED] rounded-full text-2xl p-4 min-w-24 flex justify-center font-black"
     >
       <div :class="{ 'animate-pop': animation }">{{ count }}</div>
     </div>
