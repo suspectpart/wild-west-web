@@ -1,5 +1,6 @@
 ---
-import '../styles/base.css';
+import '../styles/base.css'
+import Navbar from '../components/navbar/Navbar.astro'
 interface Props {
   title: string;
 }
@@ -17,11 +18,12 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-[#FCF5ED] p-4">
-    <div
-      class="mx-auto max-w-[800px] rounded-2xl border-8 border-double border-black bg-[#FCF5ED]"
-    >
+
+  <body class=" px-12 bg-[#d3c75d]">
+
+    <!-- <Navbar /> -->
+
       <slot />
-    </div>
+    
   </body>
 </html>

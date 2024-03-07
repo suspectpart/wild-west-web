@@ -14,6 +14,9 @@ export default {
       },
       fontFamily: {
         'west': ['"Rye"', 'serif']
+      },
+      colors: {
+        'ww-green': '#4EC69B'
       }
     },
   },

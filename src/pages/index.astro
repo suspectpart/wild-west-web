@@ -1,19 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import VueTest from '../components/VueTest.vue';
+
+const dates = [
+  { date: '12.10.', title: 'Dies ist ein Beispieltermin' },
+  { date: '12.10.', title: 'Dies ist ein Beispieltermin' },
+  { date: '12.10.', title: 'Dies ist ein Beispieltermin' },
+];
 ---
 
-<Layout title="Welcome to  Astro.">
-  <main class="p-12">
-    <div
-      class="mb-12 w-fit skew-x-12 skew-y-6 bg-[#CE5A67] p-6 text-white md:p-8"
-    >
-      <h1
-        class="-skew-x-12 -skew-y-6 font-west text-[30px] font-bold md:text-[60px]"
-      >
-        Wild * West
-      </h1>
+<Layout title="Welcome to Astro.">
+  <h1 class="font-west text-[100px] text-[#2d2e2b]">Wild West</h1>
+  <main
+    class="max-w-[90vw] min-h-96 mx-auto bg-[#2d2e2b]/50 border-[#FC6736] rounded-xl grid grid-cols-4 gap-8 p-4"
+  >
+    <div class="col-span-3 bg-[#2d2e2b] rounded p-8">
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+        <br /><br />
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <br /><br />Duis autem vel eum iriure dolor in hendrerit in vulputate
+        velit esse molestie consequat, vel illum dolore eu feugiat nulla
+        facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+        praesent luptatum zzril delenit augue duis dolore te feugait nulla
+        facilisi. Lorem ipsum dolor sit amet,
+      </p>
     </div>
-    <VueTest client:load />
+    <div class="bg-[#2d2e2b]/80 rounded p-8 flex flex-col gap-4">
+      {
+        dates.map((date) => (
+          <div class="bg-[#2d2e2b] p-4">
+            <div class="mb-2 font-bold">{date.date}</div>
+            <div text->{date.title}</div>
+          </div>
+        ))
+      }
+    </div>
   </main>
 </Layout>

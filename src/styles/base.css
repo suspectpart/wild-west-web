@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply text-[#1F1717];
-  }
+    html {
+        @apply text-[#F9F1CB];
+    }
 }
 
 @font-face {
