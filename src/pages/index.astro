@@ -8,43 +8,61 @@ const dates = [
   { date: '12.10.', title: 'Dies ist ein Beispieltermin' },
 ];
 
-const articles = [1, 2, 3]
+const articles = [1, 2, 3];
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="grid grid-cols-4 items-end max-w-[90vw] mx-auto"> 
-  <h1 class="col-span-3 text-[100px] font-bold text-[#2d2e2b] ">Wild <span class="">*</span> West</h1>
+  <div class="grid grid-cols-4 items-end max-w-[90vw] mx-auto">
+    <h1 class="col-span-3 text-[100px] font-bold text-[#2d2e2b]">
+      Wild <span class="">*</span> West
+    </h1>
 
-    <div class=" grid grid-cols-3 text-xl gap-2">
-      <div class="bg-[#2d2e2b]/50 rounded-t-2xl flex items-center justify-center font-bold pb-2 pt-3 ">Home</div>
-      <div class="bg-[#2d2e2b]/50 rounded-t-2xl flex items-center justify-center font-bold pb-2 pt-3">Termine</div>
-      <div class="bg-[#2d2e2b]/50 rounded-t-2xl flex items-center justify-center font-bold pb-2 pt-3">About</div>
-
-
-   
-      
-  
+    <div class="grid grid-cols-3 text-xl gap-2 items-end">
+      <div
+        class="font-bold pb-2 pt-3 bg-[#2d2e2b]"
+      >
+      <div class="text-center">Home</div>
+        <div class=" bg-[#2d2e2b] test-dots h-12"></div>
+      </div>
+      <div
+      class="font-bold pb-2 pt-3 bg-[#2d2e2b]"
+    >
+    <div class="text-center">Termine</div>
+      <div class=" bg-[#2d2e2b] test-dots h-16"></div>
+    </div>
+    <div
+    class="font-bold pb-2 pt-3 bg-[#2d2e2b]"
+  >
+  <div class="text-center">About</div>
+    <div class=" bg-[#2d2e2b] test-dots h-10"></div>
   </div>
+ 
+    </div>
   </div>
   <main
-    class="max-w-[90vw] min-h-96 mx-auto bg-[#2d2e2b]/50 border-[#FC6736] rounded-2xl  rounded-tr-none grid grid-cols-4 gap-4 p-4"
+    class="max-w-[90vw] min-h-96 mx-auto bg-[#2d2e2b] border-[#FC6736] rounded-2xl rounded-tr-none grid grid-cols-4 gap-4 p-4"
   >
-    <div class="col-span-3 bg-black rounded-2xl rounded-r-none  p-8 flex flex-col gap-8">
-
+    <div
+      class="col-span-3 bg-black rounded-2xl rounded-r-none p-8 flex flex-col gap-8"
+    >
       {
-        articles.map((article => (
+        articles.map((article) => (
           <div class="">
             <div class="font-bold text-2xl ">Überschrift</div>
             <div class="text-sm text-egg/60 mb-2">10.10.24</div>
             <div class="ml-4">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet cl</div>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet cl
+            </div>
           </div>
-            )))
+        ))
       }
- 
-
     </div>
-    <div class="bg-[#2d2e2b]/80 rounded-xl rounded-l-none p-8 flex flex-col gap-8">
+    <div
+      class="bg-[#2d2e2b]/80 rounded-xl rounded-l-none p-8 flex flex-col gap-8"
+    >
       {
         dates.map((date) => (
           <div class="bg-black p-4 transition-all hover:scale-110">
