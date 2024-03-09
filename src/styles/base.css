@@ -4,7 +4,13 @@
 
 @layer base {
     html {
-        @apply text-[#F9F1CB];
+        @apply text-gray-300;
+    }
+}
+
+@layer utilities {
+    .text-glow {
+        text-shadow: rgba(255,162,0,0.9) 0px 0px 39px;
     }
 }
 
