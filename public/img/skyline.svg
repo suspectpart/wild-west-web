@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="34.451969mm"
+   height="21.497101mm"
+   viewBox="0 0 34.451969 21.497101"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="skyline.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.7629017"
+     inkscape:cx="161.9489"
+     inkscape:cy="162.51615"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-65.67134,-96.572918)">
+    <g
+       inkscape:groupmode="layer"
+       id="layer2"
+       inkscape:label="Skyline"
+       style="display:inline;fill:#000000"
+       transform="translate(-197.03603,-90.524522)"
+       sodipodi:insensitive="true">
+      <g
+         id="g29"
+         style="display:inline">
+        <path
+        class="hover:fill-red-400"
+           id="rect6"
+           style="display:inline;fill:#2d2e2b;fill-opacity:1;stroke:none;stroke-width:3.96936;-inkscape-stroke:none;paint-order:stroke fill markers"
+           d="m 272.05231,187.09744 v 13.24962 h -9.34494 v 8.24748 h 9.34494 7.89466 7.10755 v -17.41789 h -7.10755 v -4.07921 z m 1.48118,2.60575 h 1.62466 v 1.91939 h -1.62466 z m 2.20244,2.9004 h 1.62473 v 1.9194 h -1.62473 z m 8.43753,1.83018 h 1.62474 v 1.9194 h -1.62474 z m -20.25241,7.37895 h 1.62474 v 1.91549 h -1.62474 z" />
+        <path
+           id="rect9"
+           style="display:inline;fill:#2d2e2b;fill-opacity:1;stroke:none;stroke-width:3.64285;-inkscape-stroke:none;paint-order:stroke fill markers"
+           d="m 290.34262,197.31865 v 5.5294 h -2.23731 v 5.74649 h 9.05403 v -5.74649 -5.5294 z" />
+      </g>
+    </g>
+  </g>
+</svg>

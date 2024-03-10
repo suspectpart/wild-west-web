@@ -12,44 +12,48 @@ const articles = [1, 2, 3];
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="grid grid-cols-4 items-end max-w-[90vw] mx-auto">
-    <h1 class="col-span-3 text-[100px] font-bold text-[#2d2e2b]">
-      Wild <span class="">*</span> West
-    </h1>
-
-    <div class="grid grid-cols-3 text-xl gap-2 items-end">
-      <div
-        class="font-bold pb-2 pt-3 bg-[#2d2e2b]"
-      >
-      <div class="text-center">Home</div>
-        <div class=" bg-[#2d2e2b] test-dots h-12"></div>
-      </div>
-      <div
-      class="font-bold pb-2 pt-3 bg-[#2d2e2b]"
-    >
-    <div class="text-center">Termine</div>
-      <div class=" bg-[#2d2e2b] test-dots h-16"></div>
+  <div class="mx-auto grid max-w-[90vw] grid-cols-4 items-end">
+    <div class="col-span-3 flex gap-24">
+      <h1 class="text-[100px] leading-[100px] font-bold text-[#2d2e2b] mb-4">
+        Wild <span class="">*</span> West
+      
+        <p class="text-2xl text-end">Neckarstadt West</p>
+      </h1>
+      <img class="translate-y-6 -z-10" src="img/rider.svg">
     </div>
-    <div
-    class="font-bold pb-2 pt-3 bg-[#2d2e2b]"
-  >
-  <div class="text-center">About</div>
-    <div class=" bg-[#2d2e2b] test-dots h-10"></div>
-  </div>
- 
+
+    <!-- <div class="grid grid-cols-3 items-end gap-2 text-xl">
+      <div class="bg-[#2d2e2b] pb-2 pt-3 font-bold">
+        <div class="text-center">Home</div>
+        <div class="test-dots h-12 bg-[#2d2e2b]"></div>
+      </div>
+      <div class="bg-[#2d2e2b] pb-2 pt-3 font-bold">
+        <div class="text-center">Termine</div>
+        <div class="test-dots h-16 bg-[#2d2e2b]"></div>
+      </div>
+      <div class="bg-[#2d2e2b] pb-2 pt-3 font-bold">
+        <div class="text-center">About</div>
+        <div class="test-dots h-10 bg-[#2d2e2b]"></div>
+      </div>
+    </div> -->
+    <div class="grid grid-cols-2 gap-4">
+      <img class="w-full" src="img/skyline.svg">
+      <img class="w-full" src="img/skyline.svg">
+      
+
     </div>
   </div>
   <main
-    class="max-w-[90vw] min-h-96 mx-auto bg-[#2d2e2b] border-[#FC6736] rounded-2xl rounded-tr-none grid grid-cols-4 gap-4 p-4"
+    class="mx-auto grid min-h-96 max-w-[90vw] grid-cols-4 gap-4 rounded-2xl rounded-tr-none border-[#FC6736] bg-[#2d2e2b] p-4"
   >
     <div
-      class="col-span-3 bg-black rounded-2xl rounded-r-none p-8 flex flex-col gap-8"
+      class="col-span-3 flex flex-col gap-8 rounded-2xl rounded-r-none bg-[#E8F4E7]/90 p-8"
     >
       {
         articles.map((article) => (
           <div class="">
-            <div class="font-bold text-2xl ">Überschrift</div>
-            <div class="text-sm text-egg/60 mb-2">10.10.24</div>
+            <div class="text-2xl font-bold ">Überschrift</div>
+            <div class="mb-2  text-sm">10.10.24</div>
             <div class="ml-4">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -60,12 +64,10 @@ const articles = [1, 2, 3];
         ))
       }
     </div>
-    <div
-      class="bg-[#2d2e2b]/80 rounded-xl rounded-l-none p-8 flex flex-col gap-8"
-    >
+    <div class="flex flex-col gap-8 rounded-xl rounded-l-none bg-gradient-to-b to-egg/80 from-red/75  p-8">
       {
         dates.map((date) => (
-          <div class="bg-black p-4 transition-all hover:scale-110">
+          <div class="bg-[#E8F4E7]/75 rounded p-4 transition-all hover:scale-110">
             <div class="mb-2 font-bold">{date.date}</div>
             <div text->{date.title}</div>
           </div>

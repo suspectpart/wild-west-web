@@ -18,7 +18,8 @@ export default {
       colors: {
         'ww-green': '#4EC69B',
         'ww-green-100': '#9EEFD0',
-        'egg': '#F9F1CB'
+        'egg': '#F9F1CB',
+        'red': '#DE6138'
       },
       boxShadow: {
         'test': '0px 0px 16px 6px #4EC69B'
