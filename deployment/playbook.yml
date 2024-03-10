@@ -2,10 +2,27 @@
 - name: Deploy Wild-West-Web
   hosts: webserver
   user: root
-  become: true
 
   tasks:
     - name: All packages are up to date
       ansible.builtin.package:
         name: "*"
         state: latest
+
+    - name: Reverse proxy is installed
+      ansible.builtin.package:
+        name:
+          - nginx
+        state: present
+      notify: Reload nginx
+
+    - name: SSL key is present
+      ansible.builtin.copy:
+        src: keypair.pem
+        dest: /etc/nginx/ssl/
+
+  handlers:
+    - name: Reload nginx
+      systemd:
+        name: nginx.service
+        state: reloaded

@@ -1,0 +1,2 @@
+---
+account_email: "{{ vault_account_email }}"
