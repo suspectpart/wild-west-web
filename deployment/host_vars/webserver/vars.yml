@@ -1,2 +1,9 @@
 ---
 account_email: "{{ vault_account_email }}"
+contact_email: "info@wildwest-mannheim.de"
+ssl_key_path: "/etc/nginx/ssl/ssl_key.pem"
+account_key_path: "/etc/nginx/ssl/account_key.pem"
+csr_path: "/etc/nginx/ssl/wildwest-mannheim.de.csr"
+certificate_path: "/etc/nginx/ssl/wildwest-mannheim.de.crt"
+fullchain_cert_path: "/etc/nginx/ssl/wildwest-mannheim.de-fullchain.crt"
+chain_only_path: "/etc/nginx/ssl/wildwest-mannheim.de-intermediate.crt"
