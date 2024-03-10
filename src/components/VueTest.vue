@@ -16,13 +16,13 @@ function clickHandler() {
 <template>
   <div class="flex items-center gap-12 bg-[#1F1717] p-4">
     <button
-      class="px-4 py-2 text-black border-[#CE5A67] border-4 bg-[#F4BF96] hover:bg-[#F4BF96]/90 rounded-xl"
+      class="rounded-xl border-4 border-[#CE5A67] bg-[#F4BF96] px-4 py-2 text-black hover:bg-[#F4BF96]/90"
       @click="clickHandler"
     >
       Obligatory click counter
     </button>
     <div
-      class="bg-[#FCF5ED] rounded-full text-2xl p-4 min-w-24 flex justify-center font-black"
+      class="flex min-w-24 justify-center rounded-full bg-[#FCF5ED] p-4 text-2xl font-black"
     >
       <div :class="{ 'animate-pop': animation }">{{ count }}</div>
     </div>
