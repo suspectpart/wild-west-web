@@ -14,12 +14,12 @@ const articles = [1, 2, 3];
 <Layout title="Welcome to Astro.">
   <div class="mx-auto grid max-w-[90vw] grid-cols-4 items-end">
     <div class="col-span-3 flex gap-24">
-      <h1 class="text-[100px] leading-[100px] font-bold text-[#2d2e2b] mb-4">
+      <h1 class="mb-4 text-[100px] font-bold leading-[100px] text-[#2d2e2b]">
         Wild <span class="">*</span> West
-      
-        <p class="text-2xl text-end">Neckarstadt West</p>
+
+        <p class="text-end text-2xl">Neckarstadt West</p>
       </h1>
-      <img class="translate-y-6 -z-10" src="img/rider.svg">
+      <img class="-z-10 translate-y-6" src="img/rider.svg" />
     </div>
 
     <!-- <div class="grid grid-cols-3 items-end gap-2 text-xl">
@@ -37,10 +37,8 @@ const articles = [1, 2, 3];
       </div>
     </div> -->
     <div class="grid grid-cols-2 gap-4">
-      <img class="w-full" src="img/skyline.svg">
-      <img class="w-full" src="img/skyline.svg">
-      
-
+      <img class="w-full" src="img/skyline.svg" />
+      <img class="w-full" src="img/skyline.svg" />
     </div>
   </div>
   <main
@@ -64,12 +62,16 @@ const articles = [1, 2, 3];
         ))
       }
     </div>
-    <div class="flex flex-col gap-8 rounded-xl rounded-l-none bg-gradient-to-b to-egg/80 from-red/75  p-8">
+    <div
+      class="flex flex-col gap-8 rounded-xl rounded-l-none bg-gradient-to-b from-[#9E88ED] to-red p-8"
+    >
       {
         dates.map((date) => (
-          <div class="bg-[#E8F4E7]/75 rounded p-4 transition-all hover:scale-110">
-            <div class="mb-2 font-bold">{date.date}</div>
-            <div text->{date.title}</div>
+          <div class="rounded border-black bg-[#2d2e2b]  p-2 transition-all hover:scale-110">
+            <div class="rounded bg-[#E8F4E7] p-4 ">
+              <div class="mb-2 font-bold">{date.date}</div>
+              <div text->{date.title}</div>
+            </div>
           </div>
         ))
       }
