@@ -1,0 +1,5 @@
+---
+ungrouped:
+  hosts:
+    webserver:
+      ansible_host: 167.235.149.1

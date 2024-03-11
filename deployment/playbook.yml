@@ -1,0 +1,97 @@
+---
+- name: Deploy Wild-West-Web
+  hosts: webserver
+  user: root
+
+  tasks:
+    - name: All packages are up to date
+      ansible.builtin.package:
+        name: "*"
+        state: latest
+
+    - name: Reverse proxy is installed
+      ansible.builtin.package:
+        name:
+          - nginx
+        state: present
+      notify: Reload nginx
+
+    - name: SSL keys are present
+      ansible.builtin.copy:
+        src: "{{ item }}"
+        dest: "/etc/nginx/ssl/{{ item }}"
+      loop:
+        - account_key.pem
+        - ssl_key.pem
+
+    - name: Copy nginx config
+      ansible.builtin.template:
+        src: nginx.conf
+        dest: /etc/nginx/sites-available/default
+      notify: Reload nginx
+
+    - name: Copy dhparams
+      ansible.builtin.copy:
+        src: dhparam
+        dest: /etc/nginx/ssl/dhparam
+
+    - name: Generate an OpenSSL Certificate Signing Request with Subject information
+      community.crypto.openssl_csr:
+        path: "{{ csr_path }}"
+        privatekey_path: "{{ ssl_key_path }}"
+        country_name: DE
+        organization_name: Wild West e.V.
+        email_address: "{{ contact_email }}"
+        common_name: wildwest-mannheim.de
+
+    - name: Create .well-known directory
+      file:
+        path: "/var/www/html/.well-known"
+        state: directory
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Create acme-challenge directory
+      ansible.builtin.file:
+        path: "/var/www/html/.well-known/acme-challenge"
+        state: directory
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Create a challenge for wildwest-mannheim.de
+      community.crypto.acme_certificate:
+        acme_version: 2
+        acme_directory: https://acme-v02.api.letsencrypt.org/directory
+        terms_agreed: true
+        remaining_days: 30
+        account_key_src: "{{ account_key_path }}"
+        csr: "{{ csr_path }}"
+        dest: "{{ certificate_path }}"
+        chain_dest: "{{ chain_only_path }}"
+        fullchain_dest: "{{ fullchain_cert_path }}"
+      register: domain_challenge
+
+    - name: "Copy http-01 challenge for wildwest-mannheim.de"
+      ansible.builtin.copy:
+        dest: "/var/www/html/{{ domain_challenge['challenge_data']['wildwest-mannheim.de']['http-01']['resource'] }}"
+        content: "{{ domain_challenge['challenge_data']['wildwest-mannheim.de']['http-01']['resource_value'] }}"
+      when: domain_challenge is changed
+
+    - name: Let the challenge be validated and retrieve the cert and intermediate certificate
+      community.crypto.acme_certificate:
+        acme_version: 2
+        acme_directory: https://acme-v02.api.letsencrypt.org/directory
+        account_key_src: "{{ account_key_path }}"
+        csr: "{{ csr_path }}"
+        dest: "{{ certificate_path }}"
+        chain_dest: "{{ chain_only_path }}"
+        fullchain_dest: "{{ fullchain_cert_path }}"
+        data: "{{ domain_challenge }}"
+
+  handlers:
+    - name: Reload nginx
+      systemd:
+        name: nginx.service
+        state: reloaded
