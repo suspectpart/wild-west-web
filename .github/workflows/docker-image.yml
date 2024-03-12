@@ -45,4 +45,4 @@ jobs:
         name: site_dist
         path: dist
     - name: Copy dist/ to server
-      run: rsync -avz --usermap=github-deploy:www-data --groupmap=github-deploy:www-data dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
+      run: rsync -avz --chown=github-deploy:www-data dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
