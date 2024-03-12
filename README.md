@@ -12,3 +12,6 @@ Then start the dev server:
 ```sh
 npm run dev
 ```
+
+## Deployment
+tbd.
