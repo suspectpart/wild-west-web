@@ -16,6 +16,25 @@
         state: present
       notify: Reload nginx
 
+    - name: Disallow SSH password authentication
+      template:
+        src: disable_password_auth.conf
+        dest: /etc/ssh/sshd_config.d/disable_password_auth.conf
+      notify:
+        - Restart sshd
+
+    - name: Add GitHub deploy user
+      ansible.builtin.user:
+        name: github-deploy
+        shell: /bin/bash
+        groups: www-data
+
+    - name: Add GitHub depoy user SSH to authorized_keys
+      ansible.posix.authorized_key:
+        user: github-deploy
+        state: present
+        key: "{{ lookup('file', 'github-actions-key.pub') }}"
+
     - name: SSL keys are present
       ansible.builtin.copy:
         src: "{{ item }}"
@@ -28,6 +47,14 @@
       ansible.builtin.template:
         src: nginx.conf
         dest: /etc/nginx/sites-available/default
+      notify: Reload nginx
+
+    - name: "Change ownership of /var/www/html to www-data:www-data"
+      ansible.builtin.file:
+        path: /var/www/html
+        owner: www-data
+        group: www-data
+        mode: 0750
       notify: Reload nginx
 
     - name: Copy dhparams
@@ -95,3 +122,8 @@
       systemd:
         name: nginx.service
         state: reloaded
+
+    - name: Restart sshd
+      service:
+        name: sshd
+        state: restarted
