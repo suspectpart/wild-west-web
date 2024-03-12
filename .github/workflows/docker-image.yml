@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Create empty dist folder
+      run: mkdir -m 0777 dist/
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag astrobuild:latest
     - name: Run Astrobuild
