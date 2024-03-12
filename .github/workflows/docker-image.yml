@@ -13,10 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Create empty dist folder
-      run: mkdir -m 0777 dist/
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag astrobuild:latest
-    - name: Run Astrobuild
-      run: docker run --rm -v $(pwd):/var/source astrobuild:latest
+    - uses: actions/checkout@v4
+    - name: Build artifacts
+      run: |
+        mkdir -m 0777 dist/
+        docker build . --file Dockerfile --tag astrobuild:latest
+        docker run --rm -v $(pwd):/var/source astrobuild:latest
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v4  
+      with:
+        name: site_dist
+        path: dist
