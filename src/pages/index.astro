@@ -28,41 +28,36 @@ const articles = [1, 2, 3];
 ---
 
 <Layout title="Welcome to Astro.">
-  <i data-feather="circle"></i>
-  <div class="mx-auto grid max-w-[90vw] grid-cols-4 items-end">
-    <div class="col-span-3 flex gap-24">
-      <h1 class="mb-4 text-[100px] font-bold leading-[100px] text-[#2d2e2b]">
+  <div
+    class="mx-auto grid max-w-[90vw] grid-cols-1 items-end sm:grid-cols-2 lg:grid-cols-4 gap-y-4"
+  >
+    <div
+      class="flex items-end justify-between gap-8 lg:col-span-3 lg:pr-12 xl:pr-24"
+    >
+      <h1
+        class="mb-4 shrink-0 text-[50px] font-bold text-[#2d2e2b] xl:text-[100px] xl:leading-[100px]"
+      >
         Wild <span class="">*</span> West
 
         <p class="text-end text-2xl">Neckarstadt West</p>
       </h1>
-      <img class="-z-10 translate-y-6" src="img/rider.svg" />
+      <div>
+        <img
+          class="-z-10 hidden w-full max-w-[150px] translate-y-4 lg:block xl:max-w-full"
+          src="img/rider.svg"
+        />
+      </div>
     </div>
-
-    <!-- <div class="grid grid-cols-3 items-end gap-2 text-xl">
-      <div class="bg-[#2d2e2b] pb-2 pt-3 font-bold">
-        <div class="text-center">Home</div>
-        <div class="test-dots h-12 bg-[#2d2e2b]"></div>
-      </div>
-      <div class="bg-[#2d2e2b] pb-2 pt-3 font-bold">
-        <div class="text-center">Termine</div>
-        <div class="test-dots h-16 bg-[#2d2e2b]"></div>
-      </div>
-      <div class="bg-[#2d2e2b] pb-2 pt-3 font-bold">
-        <div class="text-center">About</div>
-        <div class="test-dots h-10 bg-[#2d2e2b]"></div>
-      </div>
-    </div> -->
     <div class="grid grid-cols-2 gap-4">
       <img class="w-full" src="img/skyline.svg" />
       <img class="w-full" src="img/skyline.svg" />
     </div>
   </div>
   <main
-    class="mx-auto grid min-h-96 max-w-[90vw] grid-cols-4 gap-4 rounded-2xl rounded-tr-none border-[#FC6736] bg-[#2d2e2b] p-4"
+    class="mx-auto grid max-w-[90vw] grid-cols-1 gap-4 rounded-2xl rounded-tl-none sm:rounded-tl-2xl rounded-tr-none border-[#FC6736] bg-[#2d2e2b] p-4 xl:grid-cols-4"
   >
     <div
-      class="col-span-3 flex flex-col gap-8 rounded-2xl rounded-r-none bg-[#E8F4E7]/90 p-8"
+      class="flex flex-col gap-8 rounded-2xl xl:rounded-r-none bg-[#E8F4E7]/90 p-4 sm:p-8 xl:col-span-3"
     >
       {
         articles.map(() => (
@@ -80,7 +75,7 @@ const articles = [1, 2, 3];
       }
     </div>
     <div
-      class="flex flex-col gap-8 rounded-xl rounded-l-none bg-gradient-to-b from-[#9E88ED] to-[#C28E24] p-8"
+      class="flex flex-col gap-8 rounded-xl xl:rounded-l-none bg-gradient-to-b from-[#9E88ED] to-[#C28E24] p-4 sm:p-8"
     >
       {
         dates.map((date) => (
