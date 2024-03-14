@@ -29,17 +29,17 @@ const articles = [1, 2, 3];
 
 <Layout title="Welcome to Astro.">
   <div
-    class="mx-auto grid max-w-[90vw] grid-cols-1 items-end sm:grid-cols-2 lg:grid-cols-4 gap-y-4"
+    class="mx-auto grid max-w-full sm:max-w-[90vw] grid-cols-1 items-end sm:grid-cols-2 lg:grid-cols-4"
   >
     <div
       class="flex items-end justify-between gap-8 lg:col-span-3 lg:pr-12 xl:pr-24"
     >
       <h1
-        class="mb-4 shrink-0 text-[50px] font-bold text-[#2d2e2b] xl:text-[100px] xl:leading-[100px]"
+        class="mb-4 shrink-0 text-[50px] font-bold leading-none text-[#2d2e2b] lg:leading-snug xl:text-[100px] xl:leading-[100px]"
       >
         Wild <span class="">*</span> West
 
-        <p class="text-end text-2xl">Neckarstadt West</p>
+        <span class="block text-end text-2xl">Neckarstadt West</span>
       </h1>
       <div>
         <img
@@ -48,16 +48,17 @@ const articles = [1, 2, 3];
         />
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid translate-y-1 grid-cols-3 gap-4 lg:grid-cols-2">
       <img class="w-full" src="img/skyline.svg" />
       <img class="w-full" src="img/skyline.svg" />
+      <img class="w-full lg:hidden" src="img/skyline.svg" />
     </div>
   </div>
   <main
-    class="mx-auto grid max-w-[90vw] grid-cols-1 gap-4 rounded-2xl rounded-tl-none sm:rounded-tl-2xl rounded-tr-none border-[#FC6736] bg-[#2d2e2b] p-4 xl:grid-cols-4"
+    class="mx-auto grid max-w-full sm:max-w-[90vw] grid-cols-1 gap-4 rounded-2xl rounded-tl-none rounded-tr-none border-[#FC6736] bg-[#2d2e2b] p-4 sm:rounded-tl-2xl xl:grid-cols-4"
   >
     <div
-      class="flex flex-col gap-8 rounded-2xl xl:rounded-r-none bg-[#E8F4E7]/90 p-4 sm:p-8 xl:col-span-3"
+      class="flex flex-col gap-8 rounded-2xl bg-[#E8F4E7]/90 p-4 sm:p-8 xl:col-span-3 xl:rounded-r-none"
     >
       {
         articles.map(() => (
@@ -75,7 +76,7 @@ const articles = [1, 2, 3];
       }
     </div>
     <div
-      class="flex flex-col gap-8 rounded-xl xl:rounded-l-none bg-gradient-to-b from-[#9E88ED] to-[#C28E24] p-4 sm:p-8"
+      class="flex flex-col gap-8 rounded-xl bg-gradient-to-b from-[#9E88ED] to-[#C28E24] p-4 sm:p-8 xl:rounded-l-none"
     >
       {
         dates.map((date) => (
