@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import arrowIcon from '../assets/icons/arrow-right.svg';
+import DateCard from '../components/DateCard.astro';
+import Article from '../components/Article.astro';
 
 const dates = [
   {
@@ -28,84 +28,18 @@ const articles = [1, 2, 3];
 ---
 
 <Layout title="Welcome to Astro.">
-  <div
-    class="mx-auto grid max-w-full sm:max-w-[90vw] grid-cols-1 items-end sm:grid-cols-2 lg:grid-cols-4"
-  >
-    <div
-      class="flex items-end justify-between gap-8 lg:col-span-3 lg:pr-12 xl:pr-24"
-    >
-      <h1
-        class="mb-4 shrink-0 text-[50px] font-bold leading-none text-[#2d2e2b] lg:leading-snug xl:text-[100px] xl:leading-[100px]"
-      >
-        Wild <span class="">*</span> West
-
-        <span class="block text-end text-2xl">Neckarstadt West</span>
-      </h1>
-      <div>
-        <img
-          class="-z-10 hidden w-full max-w-[150px] translate-y-4 lg:block xl:max-w-full"
-          src="img/rider.svg"
-        />
-      </div>
-    </div>
-    <div class="grid translate-y-1 grid-cols-3 gap-4 lg:grid-cols-2">
-      <img class="w-full" src="img/skyline.svg" />
-      <img class="w-full" src="img/skyline.svg" />
-      <img class="w-full lg:hidden" src="img/skyline.svg" />
-    </div>
-  </div>
   <main
-    class="mx-auto grid max-w-full sm:max-w-[90vw] grid-cols-1 gap-4 rounded-2xl rounded-tl-none rounded-tr-none border-[#FC6736] bg-[#2d2e2b] p-4 sm:rounded-tl-2xl xl:grid-cols-4"
+    class="mx-auto grid max-w-full grid-cols-1 gap-4 rounded-2xl rounded-tl-none rounded-tr-none bg-ww-black p-4 sm:max-w-[90vw] sm:rounded-tl-2xl xl:grid-cols-4"
   >
-    <div
-      class="flex flex-col gap-8 rounded-2xl bg-[#E8F4E7]/90 p-4 sm:p-8 xl:col-span-3 xl:rounded-r-none"
+    <section
+      class="flex flex-col gap-8 rounded-2xl bg-ww-white/90 p-4 sm:p-8 xl:col-span-3 xl:rounded-r-none"
     >
-      {
-        articles.map(() => (
-          <div class="">
-            <div class="text-2xl font-bold ">Überschrift</div>
-            <div class="mb-2  text-sm">10.10.24</div>
-            <div class="ml-4">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet cl
-            </div>
-          </div>
-        ))
-      }
-    </div>
-    <div
-      class="flex flex-col gap-8 rounded-xl bg-gradient-to-b from-[#9E88ED] to-[#C28E24] p-4 sm:p-8 xl:rounded-l-none"
+      {articles.map(() => <Article />)}
+    </section>
+    <section
+      class="flex flex-col gap-8 rounded-xl bg-gradient-to-b from-purple to-dark-orange p-4 sm:p-8 xl:rounded-l-none"
     >
-      {
-        dates.map((date) => (
-          <div class="rounded border-black bg-[#2d2e2b]  p-2 transition-all ">
-            <div class="rounded bg-[#E8F4E7] p-4 ">
-              <div class="mb-2 flex gap-2 text-xl font-bold">
-                <>
-                  <span>{date.date}</span>
-                  <span>{date.title}</span>
-                </>
-              </div>
-              <div class="mb-4">{date.text}</div>
-              <div class="flex justify-end">
-                <a
-                  class="group flex items-center gap-1 text-lg font-bold"
-                  href={date.href}
-                >
-                  <span class="">Zum Termin</span>
-                  <Image
-                    class="w-5 translate-y-[1px] transition-transform group-hover:translate-x-1"
-                    src={arrowIcon}
-                    alt="Arrow Icon"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+      {dates.map((date) => <DateCard {date} />)}
+    </section>
   </main>
 </Layout>
