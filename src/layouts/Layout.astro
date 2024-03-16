@@ -23,6 +23,10 @@ const { title } = Astro.props;
 
   <body class="bg-gradient-to-r from-[#4EC69B] to-[#24AD9C] px-4 py-4">
     <Header />
-    <slot />
+    <main
+      class="mx-auto grid max-w-full rounded-2xl rounded-tl-none rounded-tr-none bg-ww-black p-4 sm:max-w-[90vw] sm:rounded-tl-2xl"
+    >
+      <slot />
+    </main>
   </body>
 </html>

@@ -1,20 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Article from '../components/Article.astro';
-import DateList from '../components/DateList.vue'
+// import DateC from '../components/DateList.vue'
+import DateCards from '../components/DateCards.vue';
 
 const articles = [1, 2, 3];
 ---
 
 <Layout title="Welcome to Astro.">
-  <main
-    class="mx-auto grid max-w-full grid-cols-1 gap-4 rounded-2xl rounded-tl-none rounded-tr-none bg-ww-black p-4 sm:max-w-[90vw] sm:rounded-tl-2xl xl:grid-cols-4"
-  >
+  <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
     <section
       class="flex flex-col gap-8 rounded-2xl bg-ww-white/90 p-4 sm:p-8 xl:col-span-3 xl:rounded-r-none"
     >
+      <h2 class="text-4xl font-black">News</h2>
+      <div class="flex justify-start opacity-10">
+        <div class="h-[1px] w-full max-w-48 bg-ww-black/75"></div>
+      </div>
       {articles.map(() => <Article />)}
     </section>
-    <DateList client:only="vue" />
-  </main>
+    <section
+      class="flex flex-col gap-8 rounded-xl bg-gradient-to-b from-purple to-dark-orange p-4 sm:p-8 xl:rounded-l-none"
+    >
+      <DateCards client:only="vue" />
+    </section>
+  </div>
 </Layout>
