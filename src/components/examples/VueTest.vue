@@ -1,4 +1,7 @@
 <script setup lang="ts">
+
+// Kept as basic example for .vue-component
+
 import { ref, type Ref } from 'vue';
 
 const count: Ref<number> = ref(0);

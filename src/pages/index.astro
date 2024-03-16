@@ -1,28 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DateCard from '../components/DateCard.astro';
 import Article from '../components/Article.astro';
-
-const dates = [
-  {
-    date: '12.10.',
-    title: 'Termin X',
-    text: 'Dies ist ein Beispieltermin',
-    href: '#',
-  },
-  {
-    date: '12.10.',
-    title: 'Termin X',
-    text: 'Dies ist ein Beispieltermin. Mit mehr Text und Zeilenumbruch. Dies ist ein Beispieltermin. Mit mehr Text und Zeilenumbruch.',
-    href: '#',
-  },
-  {
-    date: '12.10.',
-    title: 'Termin X',
-    text: 'Dies ist ein Beispieltermin',
-    href: '#',
-  },
-];
+import DateList from '../components/DateList.vue'
 
 const articles = [1, 2, 3];
 ---
@@ -36,10 +15,6 @@ const articles = [1, 2, 3];
     >
       {articles.map(() => <Article />)}
     </section>
-    <section
-      class="flex flex-col gap-8 rounded-xl bg-gradient-to-b from-purple to-dark-orange p-4 sm:p-8 xl:rounded-l-none"
-    >
-      {dates.map((date) => <DateCard {date} />)}
-    </section>
+    <DateList client:only="vue" />
   </main>
 </Layout>
