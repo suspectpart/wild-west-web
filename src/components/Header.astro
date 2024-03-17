@@ -14,18 +14,19 @@ import skyline from '@assets/skyline.svg';
     >
       Wild <span>*</span> West
 
-      <span class="block text-end text-2xl">Neckarstadt</span>
+      <span class="block text-end text-2xl font-light">Neckarstadt</span>
     </h1>
     <div>
       <img
         class="-z-10 hidden w-full max-w-[150px] translate-y-4 lg:block xl:max-w-full"
         src={rider.src}
+        alt="image of a horse rider"
       />
     </div>
   </div>
   <div class="grid translate-y-1 grid-cols-3 gap-4 lg:grid-cols-2">
-    <img class="w-full" src={skyline.src} />
-    <img class="w-full" src={skyline.src} />
-    <img class="w-full lg:hidden" src={skyline.src} />
+    <img alt="image of a house" class="w-full" src={skyline.src} />
+    <img alt="image of a house" class="w-full" src={skyline.src} />
+    <img alt="image of a house" class="w-full lg:hidden" src={skyline.src} />
   </div>
 </header>
