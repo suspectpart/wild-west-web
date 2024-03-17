@@ -3,8 +3,9 @@ import arrow from '@assets/icons/arrow-right.svg';
 
 interface Date {
   id: number;
-  title: string;
   date: string;
+  title: string;
+  text: string;
 }
 [];
 
@@ -15,21 +16,27 @@ const { dates }: { dates: Date[] } = await res.json();
 
 <template>
   <article
-    v-for="{ id, date, title } in dates"
+    v-for="{ id, date, title, text } in dates"
     :key="id"
     class="rounded bg-ww-black p-2"
   >
-    <div class="rounded bg-ww-white p-4">
-      <h3 class="mb-2 flex gap-2 text-xl font-bold">
-        <span>{{ date }}</span>
-        <span class="text-lg"></span>
+    <div class="flex flex-col gap-2 rounded bg-ww-white p-4">
+      <h3 class="flex gap-2 text-xl font-bold">
+        <span class="font-light">{{ date }}</span>
+        <span>{{ title }}</span>
       </h3>
-      <p class="mb-4">{{ title }}</p>
+      <div
+        class="mb-1 flex flex-col items-start justify-center gap-1 opacity-50 xl:items-center"
+      >
+        <div class="h-[2px] w-24 bg-ww-black/75"></div>
+        <div class="h-[2px] w-12 bg-ww-black/75"></div>
+      </div>
+      <p class="mb-4">{{ text }}</p>
       <div class="flex justify-end">
-        <a class="group flex items-center gap-1 text-lg font-bold" href="#">
+        <a class="group flex items-center gap-1 text-sm font-bold" href="#">
           <span>Zum Termin</span>
           <img
-            class="w-5 translate-y-[1px] transition-transform group-hover:translate-x-1"
+            class="w-5 transition-transform group-hover:translate-x-1"
             :src="arrow.src"
             alt="Arrow Icon"
           />
