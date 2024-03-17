@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import arrow from '../assets/icons/arrow-right.svg';
+import arrow from '@assets/icons/arrow-right.svg';
 
 interface Date {
   id: number;

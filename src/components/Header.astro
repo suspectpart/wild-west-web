@@ -1,3 +1,8 @@
+---
+import rider from '@assets/rider.svg';
+import skyline from '@assets/skyline.svg';
+---
+
 <header
   class="mx-auto grid max-w-full grid-cols-1 items-end sm:max-w-[90vw] sm:grid-cols-2 lg:grid-cols-4"
 >
@@ -7,20 +12,20 @@
     <h1
       class="mb-4 shrink-0 text-[50px] font-black leading-none text-ww-black lg:leading-snug xl:text-[100px] xl:leading-[100px]"
     >
-      Wild <span class="">*</span> West
+      Wild <span>*</span> West
 
       <span class="block text-end text-2xl">Neckarstadt</span>
     </h1>
     <div>
       <img
         class="-z-10 hidden w-full max-w-[150px] translate-y-4 lg:block xl:max-w-full"
-        src="img/rider.svg"
+        src={rider.src}
       />
     </div>
   </div>
   <div class="grid translate-y-1 grid-cols-3 gap-4 lg:grid-cols-2">
-    <img class="w-full" src="img/skyline.svg" />
-    <img class="w-full" src="img/skyline.svg" />
-    <img class="w-full lg:hidden" src="img/skyline.svg" />
+    <img class="w-full" src={skyline.src} />
+    <img class="w-full" src={skyline.src} />
+    <img class="w-full lg:hidden" src={skyline.src} />
   </div>
 </header>
