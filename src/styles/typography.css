@@ -1,0 +1,20 @@
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+
+  html {
+    @apply font-poppins text-ww-black;
+  }
+
+  h1,
+  h2 {
+    @apply font-oswald;
+  }
+
+  h2 {
+    @apply text-6xl;
+  }
+}

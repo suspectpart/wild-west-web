@@ -14,7 +14,8 @@ export default {
       },
       fontFamily: {
         'west': ['"Rye"', 'serif'],
-        'oswald': ['"Oswald", sans-serif']
+        'oswald': ['"Oswald", sans-serif'],
+        'poppins': ['"Poppins", sans-serif' ]
       },
       colors: {
         'ww-green': '#4EC69B',

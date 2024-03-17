@@ -1,26 +1,7 @@
+@import './fonts.css';
+@import './typography.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {
-  @font-face {
-    font-family: 'Rye';
-    src: url('/fonts/Rye-Regular.ttf');
-  }
-
-  @font-face {
-    font-family: 'Oswald';
-    src: url('/fonts/Oswald-VariableFont_wght.ttf');
-  }
-}
-
-@layer utilities {
-    .text-glow {
-      text-shadow: rgba(255, 162, 0, 0.9) 0px 0px 39px;
-    }
-    .test-dots {
-      background-image: radial-gradient(rgb(209 213 219) 4px, transparent 0);
-      background-size: 40px 40px;
-    }
-  }
