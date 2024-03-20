@@ -10,5 +10,8 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "svg.preview.background": "transparent"
+  "svg.preview.background": "transparent",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
