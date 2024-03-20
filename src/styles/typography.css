@@ -15,6 +15,10 @@
   }
 
   h2 {
-    @apply text-6xl;
+    @apply text-5xl sm:text-6xl;
+  }
+
+  h3 {
+    @apply text-2xl;
   }
 }
