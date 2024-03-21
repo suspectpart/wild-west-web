@@ -14,6 +14,10 @@
     @apply font-oswald;
   }
 
+  h1 {
+    @apply text-[3.75rem] lg:text-[5rem]  lg:leading-[5rem] xl:text-[6.25rem] xl:leading-[6.25rem];
+  }
+
   h2 {
     @apply text-5xl sm:text-6xl;
   }

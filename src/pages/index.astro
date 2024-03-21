@@ -7,19 +7,19 @@ import Spacer from '../components/ui/Spacer.astro';
 const articles = [1, 2, 3];
 ---
 
-<Layout >
+<Layout>
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
     <section
-      class=" rounded-2xl bg-ww-white/90 p-4 sm:p-8 xl:col-span-3 xl:rounded-r-none"
+      class="rounded-2xl bg-ww-white/90 p-4 sm:p-8 xl:col-span-3 xl:rounded-r-none"
     >
-    <div class="mb-8">
-      <h2 class="mb-2">News</h2>
+      <div class="mb-8">
+        <h2 class="mb-2">News</h2>
 
-      <Spacer alignment="justify-center items-start"/>
-    </div>
+        <Spacer alignment="justify-center items-start" />
+      </div>
       <div class="flex flex-col gap-8">
-      {articles.map(() => <Article />)}
-    </div>
+        {articles.map(() => <Article />)}
+      </div>
     </section>
     <section
       class="flex flex-col gap-8 rounded-xl bg-gradient-to-b from-purple to-dark-orange p-4 sm:p-8 xl:rounded-l-none"
