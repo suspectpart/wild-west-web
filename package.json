@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "vue-tsc && astro check && astro build",
+    "build": "vue-tsc && npx eslint . && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
